@@ -7,8 +7,34 @@ export default StyleSheet.create({
     backgroundColor: "#4286f4",
     justifyContent: "center"
   },
-  text: {
+  titleContainer: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  inputContainer: {
+    flex: 0.3,
+    justifyContent: "space-between",
+    width: "100%",
+    padding: 25
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  logo: {
+    width: 60,
+    height: 60
+  },
+  title: {
     color: "#fff",
     fontSize: 30
+  },
+  input: {
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    borderColor: "transparent",
+    width: "100%",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10
   }
 });
