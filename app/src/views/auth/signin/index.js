@@ -22,7 +22,12 @@ class SignIn extends Component {
           <TextInput style={styles.input} placeholder="Password" />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="Sign in" touched={this.handleButtonTouch} />
+          <Button
+            title="Sign in"
+            textColor="white"
+            backgroundColor="#70db70"
+            touched={this.handleButtonTouch}
+          />
         </View>
       </View>
     );
