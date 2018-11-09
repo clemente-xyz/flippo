@@ -28,13 +28,5 @@ export default StyleSheet.create({
   title: {
     color: "#fff",
     fontSize: 30
-  },
-  input: {
-    backgroundColor: "rgba(255, 255, 255, 0.3)",
-    borderColor: "transparent",
-    width: "100%",
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10
   }
 });
