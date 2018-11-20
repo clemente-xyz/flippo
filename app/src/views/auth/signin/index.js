@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { View, Image, Text, TextInput, Alert } from "react-native";
 import styles from "./styles";
 
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
+import { Button, Input } from "../../../components";
 import logo from "../../../assets/logo.png";
 
 class SignIn extends Component {
