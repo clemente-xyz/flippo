@@ -4,7 +4,7 @@
   "description": "flippo app server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [
     "nodejs",
@@ -13,6 +13,8 @@
   "author": "ClementeSerrano",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2",
