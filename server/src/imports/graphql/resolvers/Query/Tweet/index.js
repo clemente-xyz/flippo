@@ -5,7 +5,7 @@ const getTweet = {
 };
 
 const getTweets = {
-  getTweets: () => Tweet.find({})
+  getTweets: () => Tweet.find({}).sort({ createdAt: -1 })
 };
 
 export { getTweet, getTweets };
