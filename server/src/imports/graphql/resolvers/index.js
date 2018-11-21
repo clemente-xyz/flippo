@@ -1,5 +1,7 @@
-import getTweets from "./Query";
+import TweetResolvers from "./Query/Tweet";
 
 export default {
-  Query: { getTweets }
+  Query: {
+    getTweets: TweetResolvers.getTweets
+  }
 };
