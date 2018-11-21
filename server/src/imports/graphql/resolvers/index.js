@@ -8,6 +8,7 @@ export default {
   },
   Mutation: {
     createTweet: tweetMutations.createTweet,
-    updateTweet: tweetMutations.updateTweet
+    updateTweet: tweetMutations.updateTweet,
+    deleteTweet: tweetMutations.deleteTweet
   }
 };

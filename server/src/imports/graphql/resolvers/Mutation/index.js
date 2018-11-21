@@ -1,8 +1,9 @@
-import { createTweet, updateTweet } from "./Tweet";
+import { createTweet, updateTweet, deleteTweet } from "./Tweet";
 
 const tweetMutations = {
   createTweet: createTweet.createTweet,
-  updateTweet: updateTweet.updateTweet
+  updateTweet: updateTweet.updateTweet,
+  deleteTweet: deleteTweet.deleteTweet
 };
 
 export { tweetMutations };

@@ -1,6 +1,10 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
+  type Status {
+    message: String!
+  }
+
   type Tweet {
     _id: ID!
     text: String!
@@ -14,5 +18,6 @@ export default gql`
   type Mutation {
     createTweet(text: String!): Tweet
     updateTweet(_id: ID!, text: String): Tweet
+    deleteTweet(_id: ID!): Status
   }
 `;
