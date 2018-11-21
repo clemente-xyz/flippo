@@ -1,7 +1,6 @@
-const { GraphQLSchema } = require("graphql");
+import { GraphQLSchema } from "graphql";
+import Query from "./Query";
 
-const Query = require("./Query");
-
-module.exports = new GraphQLSchema({
+export default new GraphQLSchema({
   query: Query
 });

@@ -1,9 +1,8 @@
-const { GraphQLObjectType } = require("graphql");
+import { GraphQLObjectType } from "graphql";
+import UserQuery from "./User";
+import ChallengeQuery from "./Challenge";
 
-const UserQuery = require("./User");
-const ChallengeQuery = require("./Challenge");
-
-module.exports = new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: "Query",
   fields: {
     user: UserQuery,

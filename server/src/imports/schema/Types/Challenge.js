@@ -1,11 +1,11 @@
-const {
+import {
   GraphQLObjectType,
   GraphQLID,
   GraphQLString,
   GraphQLInt
-} = require("graphql");
+} from "graphql";
 
-const ChallengeType = new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: "Chanllenge",
   fields: () => ({
     id: { type: GraphQLID },
@@ -13,5 +13,3 @@ const ChallengeType = new GraphQLObjectType({
     difficulty: { type: GraphQLInt }
   })
 });
-
-module.exports = ChallengeType;

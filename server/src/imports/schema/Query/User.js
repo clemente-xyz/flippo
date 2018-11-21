@@ -1,8 +1,6 @@
-const { GraphQLID } = require("graphql");
-
-const _ = require("lodash");
-
-const { UserType } = require("../Types");
+import { GraphQLID } from "graphql";
+import _ from "lodash";
+import { UserType } from "../Types";
 
 var user = [
   {
@@ -25,7 +23,7 @@ var user = [
   }
 ];
 
-module.exports = {
+export default {
   type: UserType,
   args: { id: { type: GraphQLID } },
   resolve(patern, args) {

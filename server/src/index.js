@@ -1,9 +1,7 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-
-const graphqlHTTP = require("express-graphql");
-
-const schema = require("./imports/schema");
+import express from "express";
+import bodyParser from "body-parser";
+import graphqlHTTP from "express-graphql";
+import schema from "./imports/schema";
 
 const app = express();
 

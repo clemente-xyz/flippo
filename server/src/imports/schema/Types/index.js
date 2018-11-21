@@ -1,4 +1,4 @@
-const UserType = require("./User");
-const ChallengeType = require("./Challenge");
+import UserType from "./User";
+import ChallengeType from "./Challenge";
 
-module.exports = { UserType, ChallengeType };
+export { UserType, ChallengeType };
