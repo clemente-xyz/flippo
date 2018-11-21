@@ -1,7 +1,12 @@
-import TweetResolvers from "./Query/Tweet";
+import { tweetQueries } from "./Query";
+import { tweetMutations } from "./Mutation";
 
 export default {
   Query: {
-    getTweets: TweetResolvers.getTweets
+    getTweet: tweetQueries.getTweet,
+    getTweets: tweetQueries.getTweets
+  },
+  Mutation: {
+    createTweet: tweetMutations.createTweet
   }
 };

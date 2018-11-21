@@ -1,5 +1,8 @@
-import TweetsQuery from "./Tweet";
+import { getTweet, getTweets } from "./Tweet";
 
-export default {
-  getTweets: TweetsQuery.getTweets
+const tweetQueries = {
+  getTweet: getTweet.getTweet,
+  getTweets: getTweets.getTweets
 };
+
+export { tweetQueries };
