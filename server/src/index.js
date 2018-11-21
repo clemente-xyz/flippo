@@ -1,27 +1,22 @@
 import express from "express";
 import bodyParser from "body-parser";
-import graphqlHTTP from "express-graphql";
-import schema from "./imports/schema";
+import { ApolloServer } from "apollo-server-express";
+import constants from "./imports/config/Constants";
 import "./imports/config/db";
+import schema from "./imports/graphql";
 
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const path = constants.GRAPHQL_PATH;
+
+schema.applyMiddleware({ app, path });
 
 app.use(bodyParser.json());
 
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema,
-    graphiql: true
-  })
-);
-
-app.listen(PORT, err => {
+app.listen(constants.PORT, err => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`flippo server running on port ${PORT}...`);
+    console.log(`flippo server running on port ${constants.PORT}...`);
   }
 });
