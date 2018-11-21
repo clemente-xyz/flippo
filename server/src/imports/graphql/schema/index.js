@@ -13,5 +13,6 @@ export default gql`
 
   type Mutation {
     createTweet(text: String!): Tweet
+    updateTweet(_id: ID!, text: String): Tweet
   }
 `;

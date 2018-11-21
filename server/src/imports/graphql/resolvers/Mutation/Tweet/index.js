@@ -4,4 +4,8 @@ const createTweet = {
   createTweet: (_, args) => Tweet.create(args)
 };
 
-export { createTweet };
+const updateTweet = {
+  updateTweet: (_, { _id, ...rest }) => Tweet.findByIdAndUpdate(_id, rest)
+};
+
+export { createTweet, updateTweet };

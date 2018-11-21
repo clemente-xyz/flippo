@@ -7,6 +7,7 @@ export default {
     getTweets: tweetQueries.getTweets
   },
   Mutation: {
-    createTweet: tweetMutations.createTweet
+    createTweet: tweetMutations.createTweet,
+    updateTweet: tweetMutations.updateTweet
   }
 };
