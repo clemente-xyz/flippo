@@ -1,6 +1,8 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
+  scalar Date
+
   type Status {
     message: String!
   }
@@ -8,6 +10,8 @@ export default gql`
   type Tweet {
     _id: ID!
     text: String!
+    createdAt: Date
+    updatedAt: Date
   }
 
   type Query {
