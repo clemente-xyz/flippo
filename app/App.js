@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import SignIn from "./src/views/Auth/Signin/";
+import React from "react";
+import Views from "./src/views";
 
-export default class App extends Component {
-  render() {
-    return <SignIn />;
-  }
-}
+const App = () => (
+
+<Views />
+)
+
+export default App;
