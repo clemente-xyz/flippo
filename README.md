@@ -13,15 +13,14 @@ Specifically, the game establishes a set of challenges for the user, which once 
 
 ## Local deployment
 
-TO BE CONTINUED...
-
 ### Prerequisites
 
-- Node >v8.11.3.
+- Node >v8.11.3
 - Npm >5.10.0
 - Expo
-- Git.
-- TO BE CONTINUED...
+- Xcode (for IOS deployment)
+- Android Studio or other Android emulator (for Android deployment)
+- Git
 
 ### Cloning and running
 
@@ -31,11 +30,33 @@ First of all clone the repo in your local machine by running:
 $ git clone https://github.com/ClementeSerrano/flippo.git
 ```
 
-After you enter to the directory of the project (`$ cd flippo`), install node dependencies by running:
+After you enter to the directory of the project (`$ cd flippo`), go to both the server (`$ cd server`) and the client (`$ cd app`) and install node dependencies by running:
 
 ```
 $ npm install
 ```
+
+Once all node dependencies are installed, run in parallel the client and the server:
+
+For the server:
+
+```
+$ npm start
+```
+
+For the client (mobile app):
+
+```
+$ npm run ios
+```
+
+or
+
+```
+$ npm run android
+```
+
+(depending on which OS do you want to test the app).
 
 TO BE CONTINUED...
 
