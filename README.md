@@ -24,7 +24,7 @@ Specifically, the game establishes a set of challenges for the user, which once 
 
 ### Cloning and running
 
-First of all clone the repo in your local machine by running:
+First of all, clone the repo in your local machine by running:
 
 ```
 $ git clone https://github.com/ClementeSerrano/flippo.git
@@ -36,7 +36,7 @@ After you enter to the directory of the project (`$ cd flippo`), go to both the 
 $ npm install
 ```
 
-Once all node dependencies are installed, run in parallel the client and the server:
+Once all node dependencies are installed, run in parallel the client and the server.
 
 For the server:
 
