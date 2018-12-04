@@ -23,9 +23,15 @@ class SignIn extends Component {
   };
 
   handleButtonTouch = () => {
-    Alert.alert(
-      "Email: " + this.state.email + " Password: " + this.state.password
-    );
+    const { email, password } = this.state;
+
+    if (email != "clementeserranosutil@gmail.com" && password != "clemente") {
+      Alert.alert(
+        "Ooops! Seems that your email or password are wrong :( Try again!"
+      );
+    } else {
+      Alert.alert("Welcome Clemente!");
+    }
   };
 
   render() {
