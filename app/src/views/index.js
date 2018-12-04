@@ -1,9 +1,4 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import React from "react";
 import { Signin } from "./Auth";
 
-export default () => {
-  const AppStack = createStackNavigator({
-    Auth: { screen: Signin }
-  });
-  return createAppContainer(AppStack);
-};
+export default () => <Signin />;
