@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Text, View, ActivityIndicator } from "react-native";
 import { Camera, Permissions } from "expo";
 import Styles from "./styles";
 import Button from "../Button";
 
-export default class CameraExample extends React.Component {
+export default class extends Component {
   state = {
     hasCameraPermission: null,
     type: Camera.Constants.Type.back,
