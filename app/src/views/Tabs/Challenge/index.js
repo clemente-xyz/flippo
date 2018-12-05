@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import Camera from "../../../components/Camera";
 
 export default class extends Component {
   render() {
-    return (
-      <View>
-        <Text>Pico</Text>
-      </View>
-    );
+    return <Camera />;
   }
 }

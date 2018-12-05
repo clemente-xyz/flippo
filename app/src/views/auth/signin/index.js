@@ -9,13 +9,13 @@ class SignIn extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      username: "",
       password: ""
     };
   }
 
-  handleEmailChange = text => {
-    this.setState({ email: text });
+  handleUsernameChange = text => {
+    this.setState({ username: text });
   };
 
   handlePasswordChange = text => {
@@ -23,11 +23,11 @@ class SignIn extends Component {
   };
 
   handleButtonTouch = () => {
-    const { email, password } = this.state;
+    const { username, password } = this.state;
 
-    if (email != "clementeserranosutil@gmail.com" && password != "clemente") {
+    if (username != "ClementeSerrano" && password != "Clemente") {
       Alert.alert(
-        "Ooops! Seems that your email or password are wrong :( Try again!"
+        "Ooops! Seems that your username or password are wrong :( Try again!"
       );
     } else {
       Alert.alert("Welcome Clemente!");
@@ -44,8 +44,8 @@ class SignIn extends Component {
         </View>
         <View style={styles.inputContainer}>
           <Input
-            changed={this.handleEmailChange}
-            placeholder="Email"
+            changed={this.handleUsernameChange}
+            placeholder="Username"
             textColor="white"
             backgroundColor="rgba(255, 255, 255, 0.3)"
           />

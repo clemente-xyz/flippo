@@ -10,6 +10,7 @@ export default class Button extends Component {
           Styles(this.props.textColor, this.props.backgroundColor).container
         }
         onPress={this.props.touched}
+        disabled={this.props.buttonDisabled}
       >
         <Text
           style={Styles(this.props.textColor, this.props.backgroundColor).font}

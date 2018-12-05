@@ -17,11 +17,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Flippo requires the camera to take an image to be identified",
+        "NSPhotoLibraryAddUsageDescription": "Flippo access to your photo libraries"
+      }
     }
   }
 }
