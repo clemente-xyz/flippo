@@ -5,14 +5,19 @@ import Styles from "./styles";
 
 export default class Input extends Component {
   render() {
+    const {
+      changed,
+      textColor,
+      backgroundColor,
+      placeholder,
+      isPassword
+    } = this.props;
     return (
       <TextInput
-        onChangeText={this.props.changed}
-        style={
-          Styles(this.props.textColor, this.props.backgroundColor).container
-        }
-        placeholder={this.props.placeholder}
-        secureTextEntry={this.props.isPassword}
+        onChangeText={changed}
+        style={Styles(textColor, backgroundColor).container}
+        placeholder={placeholder}
+        secureTextEntry={isPassword}
       />
     );
   }

@@ -65,7 +65,7 @@ export default class extends Component {
   }
 
   render() {
-    const { hasCameraPermission } = this.state;
+    const { hasCameraPermission, loading, type } = this.state;
     if (hasCameraPermission === null) {
       return <View />;
     } else if (hasCameraPermission === false) {
@@ -78,13 +78,13 @@ export default class extends Component {
               this.camera = ref;
             }}
             style={Styles.mainContainer}
-            type={this.state.type}
+            type={type}
           >
             <ActivityIndicator
               size="large"
               style={Styles.loadingIndicator}
               color="#fff"
-              animating={this.state.loading}
+              animating={loading}
             />
             <View style={Styles.cameraContainer}>
               <View style={Styles.buttonContainer}>

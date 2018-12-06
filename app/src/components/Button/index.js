@@ -4,19 +4,20 @@ import Styles from "./styles";
 
 export default class Button extends Component {
   render() {
+    const {
+      textColor,
+      backgroundColor,
+      touched,
+      buttonDisabled,
+      title
+    } = this.props;
     return (
       <TouchableOpacity
-        style={
-          Styles(this.props.textColor, this.props.backgroundColor).container
-        }
-        onPress={this.props.touched}
-        disabled={this.props.buttonDisabled}
+        style={Styles(textColor, backgroundColor).container}
+        onPress={touched}
+        disabled={buttonDisabled}
       >
-        <Text
-          style={Styles(this.props.textColor, this.props.backgroundColor).font}
-        >
-          {this.props.title}
-        </Text>
+        <Text style={Styles(textColor, backgroundColor).font}>{title}</Text>
       </TouchableOpacity>
     );
   }
