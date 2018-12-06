@@ -1,20 +1,15 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import { Signin } from "./Auth";
-import { Challenge } from "./Tabs";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import Auth from "./Auth";
+import Tabs from "./Tabs";
 
-const Views = createStackNavigator(
-  {
-    Auth: {
-      screen: Signin,
-      navigationOptions: {
-        header: null
-      }
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      Auth: Auth,
+      Tabs: Tabs
     },
-    Challenge: { screen: Challenge }
-  },
-  {
-    initialRouteName: "Auth"
-  }
+    {
+      initialRouteName: "Auth"
+    }
+  )
 );
-
-export default createAppContainer(Views);

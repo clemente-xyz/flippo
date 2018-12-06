@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image, Text, TextInput, Alert } from "react-native";
+import { View, Image, Text, Alert } from "react-native";
 import styles from "./styles";
 
 import { Button, Input } from "../../../components";
@@ -31,7 +31,7 @@ class SignIn extends Component {
       );
     } else {
       Alert.alert("Welcome Clemente!");
-      this.props.navigation.navigate("Challenge");
+      this.props.navigation.navigate("Challenges");
     }
   };
 
