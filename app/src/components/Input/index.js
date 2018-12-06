@@ -12,6 +12,7 @@ export default class Input extends Component {
           Styles(this.props.textColor, this.props.backgroundColor).container
         }
         placeholder={this.props.placeholder}
+        secureTextEntry={this.props.isPassword}
       />
     );
   }

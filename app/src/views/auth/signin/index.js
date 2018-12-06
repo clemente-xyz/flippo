@@ -48,12 +48,14 @@ class SignIn extends Component {
             placeholder="Username"
             textColor="white"
             backgroundColor="rgba(255, 255, 255, 0.3)"
+            isPassword={false}
           />
           <Input
             changed={this.handlePasswordChange}
             placeholder="Password"
             textColor="white"
             backgroundColor="rgba(255, 255, 255, 0.3)"
+            isPassword={true}
           />
         </View>
         <View style={styles.buttonContainer}>
