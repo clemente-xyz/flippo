@@ -20,7 +20,12 @@ const AuthStack = createStackNavigator({
 });
 
 const ChallengeStack = createStackNavigator({
-  Challenge: { screen: Challenges },
+  Challenge: {
+    screen: Challenges,
+    navigationOptions: {
+      header: null
+    }
+  },
   OnChallenge: { screen: OnChallenge }
 });
 
