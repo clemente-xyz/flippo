@@ -1,3 +1,4 @@
+import Profile from "./Profile";
 import Challenges from "./Challenges";
 
-export { Challenges };
+export { Profile, Challenges };

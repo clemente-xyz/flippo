@@ -8,7 +8,7 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import { Signin } from "./Auth";
 import OnChallenge from "./OnChallenge";
-import { Challenges } from "./Tabs";
+import { Profile, Challenges } from "./Tabs";
 
 const AuthStack = createStackNavigator({
   Auth: {
@@ -25,6 +25,15 @@ const ChallengeStack = createStackNavigator({
 });
 
 const BottomTabNavStack = createBottomTabNavigator({
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      tabBarLabel: "Me",
+      tabBarIcon: ({ tintColor }) => (
+        <FontAwesome name="user" size={25} color={tintColor} />
+      )
+    }
+  },
   Challenges: {
     screen: ChallengeStack,
     navigationOptions: {

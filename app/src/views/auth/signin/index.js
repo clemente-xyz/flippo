@@ -25,7 +25,7 @@ class SignIn extends Component {
   handleButtonTouch = () => {
     const { username, password } = this.state;
 
-    if (username != "ClementeSerrano" && password != "Clemente") {
+    if (username != "ClementeSerrano" || password != "Clemente") {
       Alert.alert(
         "Ooops! Seems that your username or password are wrong :( Please try again!"
       );
