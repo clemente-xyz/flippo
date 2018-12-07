@@ -31,7 +31,7 @@ class SignIn extends Component {
       );
     } else {
       Alert.alert("Welcome Clemente!");
-      this.props.navigation.navigate("Challenges");
+      this.props.navigation.navigate("Challenge");
     }
   };
 

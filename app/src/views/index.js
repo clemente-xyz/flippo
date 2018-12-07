@@ -1,15 +1,3 @@
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import Auth from "./Auth";
-import Tabs from "./Tabs";
+import Routes from "./Routes";
 
-export default createAppContainer(
-  createSwitchNavigator(
-    {
-      Auth: Auth,
-      Tabs: Tabs
-    },
-    {
-      initialRouteName: "Auth"
-    }
-  )
-);
+export default Routes;
