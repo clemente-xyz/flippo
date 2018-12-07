@@ -20,6 +20,7 @@ export default class extends Component {
   takePicture = async function() {
     if (this.camera) {
       this.camera.pausePreview();
+      this.props.handleTime();
 
       this.setState({
         loading: true
@@ -54,12 +55,14 @@ export default class extends Component {
   }
 
   displayAnswer(identifiedImage) {
+    const { identifedAs } = this.state;
+
     this.setState({
       identifedAs: identifiedImage,
       loading: false
     });
 
-    alert(this.state.identifedAs);
+    this.props.handleDraw(this.state.identifedAs);
 
     this.camera.resumePreview();
   }
