@@ -41,7 +41,7 @@ export default class extends Component {
     const Clarifai = require("clarifai");
 
     const app = new Clarifai.App({
-      apiKey: "6478f7a69ee34052985a4a9857c963ea"
+      apiKey: "SECRET"
     });
 
     app.models
