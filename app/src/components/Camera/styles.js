@@ -5,9 +5,9 @@ const Styles = StyleSheet.create({
     flex: 1
   },
   cameraContainer: {
-    flex: 1,
     backgroundColor: "transparent",
-    flexDirection: "row"
+    alignItems: "center",
+    padding: 30
   },
   loadingIndicator: {
     flex: 1,
@@ -15,11 +15,21 @@ const Styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonContainer: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
     margin: 15,
-    padding: 30
+    width: "100%"
+  },
+  timerContainer: {
+    borderRadius: 5,
+    backgroundColor: "#f44253",
+    alignItems: "center",
+    width: "100%",
+    padding: 10
+  },
+  timerFont: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    padding: 10
   }
 });
 

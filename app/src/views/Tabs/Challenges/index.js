@@ -42,7 +42,7 @@ export default class extends Component {
                   <Text style={Styles.items}>{item.name}</Text>
                   <View style={Styles.spacer} />
                   <TouchableOpacity onPress={this.handleClick}>
-                    <Text style={Styles.button}>Draw it!</Text>
+                    <Text style={Styles.button}>Draw me!</Text>
                   </TouchableOpacity>
                 </View>
                 <View style={Styles.hr} />

@@ -87,6 +87,9 @@ export default class extends Component {
               animating={loading}
             />
             <View style={Styles.cameraContainer}>
+              <View style={Styles.timerContainer}>
+                <Text style={Styles.timerFont}>{this.props.timer}</Text>
+              </View>
               <View style={Styles.buttonContainer}>
                 <Button
                   title="Flipp it!"
