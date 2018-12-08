@@ -1,27 +1,31 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
-  scalar Date
-
   type Status {
     message: String!
   }
 
-  type Tweet {
+  type Challenge {
     _id: ID!
-    text: String!
-    createdAt: Date
-    updatedAt: Date
+    animal: String!
+    timeToDraw: Int
+    flippoCoins: Int
+    difficulty: Int
   }
 
   type Query {
-    getTweet(_id: ID): Tweet
-    getTweets: [Tweet]
+    getChallenge(_id: ID): Challenge
+    getChallenges: [Challenge]
   }
 
   type Mutation {
-    createTweet(text: String!): Tweet
-    updateTweet(_id: ID!, text: String): Tweet
-    deleteTweet(_id: ID!): Status
+    createChallenge(
+      animal: String!
+      timeToDraw: Int!
+      flippoCoins: Int!
+      difficulty: Int!
+    ): Challenge
+    updateChallenge(_id: ID!, text: String): Challenge
+    deleteChallenge(_id: ID!): Status
   }
 `;

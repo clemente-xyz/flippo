@@ -1,9 +1,9 @@
-import { createTweet, updateTweet, deleteTweet } from "./Tweet";
+import { createChallenge, updateChallenge, deleteChallenge } from "./Challenge";
 
-const tweetMutations = {
-  createTweet: createTweet.createTweet,
-  updateTweet: updateTweet.updateTweet,
-  deleteTweet: deleteTweet.deleteTweet
+const ChallengeMutations = {
+  createChallenge: createChallenge.createChallenge,
+  updateChallenge: updateChallenge.updateChallenge,
+  deleteChallenge: deleteChallenge.deleteChallenge
 };
 
-export { tweetMutations };
+export { ChallengeMutations };

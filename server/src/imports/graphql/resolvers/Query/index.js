@@ -1,8 +1,8 @@
-import { getTweet, getTweets } from "./Tweet";
+import { getChallenge, getChallenges } from "./Challenge";
 
-const tweetQueries = {
-  getTweet: getTweet.getTweet,
-  getTweets: getTweets.getTweets
+const ChallengeQueries = {
+  getChallenge: getChallenge.getChallenge,
+  getChallenges: getChallenges.getChallenges
 };
 
-export { tweetQueries };
+export { ChallengeQueries };

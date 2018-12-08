@@ -1,14 +1,14 @@
-import { tweetQueries } from "./Query";
-import { tweetMutations } from "./Mutation";
+import { ChallengeQueries } from "./Query";
+import { ChallengeMutations } from "./Mutation";
 
 export default {
   Query: {
-    getTweet: tweetQueries.getTweet,
-    getTweets: tweetQueries.getTweets
+    getChallenge: ChallengeQueries.getChallenge,
+    getChallenges: ChallengeQueries.getChallenges
   },
   Mutation: {
-    createTweet: tweetMutations.createTweet,
-    updateTweet: tweetMutations.updateTweet,
-    deleteTweet: tweetMutations.deleteTweet
+    createChallenge: ChallengeMutations.createChallenge,
+    updateChallenge: ChallengeMutations.updateChallenge,
+    deleteChallenge: ChallengeMutations.deleteChallenge
   }
 };

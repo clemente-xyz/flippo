@@ -1,3 +1,3 @@
-import Tweet from "./Tweet";
+import Challenge from "./Challenge";
 
-export { Tweet };
+export { Challenge };
