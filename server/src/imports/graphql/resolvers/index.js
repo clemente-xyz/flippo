@@ -1,5 +1,5 @@
 import { UserQueries, ChallengeQueries } from "./Query";
-import { ChallengeMutations } from "./Mutation";
+import { UserMutations, ChallengeMutations } from "./Mutation";
 
 export default {
   Query: {
@@ -11,6 +11,7 @@ export default {
   Mutation: {
     createChallenge: ChallengeMutations.createChallenge,
     updateChallenge: ChallengeMutations.updateChallenge,
-    deleteChallenge: ChallengeMutations.deleteChallenge
+    deleteChallenge: ChallengeMutations.deleteChallenge,
+    createUser: UserMutations.createUser
   }
 };

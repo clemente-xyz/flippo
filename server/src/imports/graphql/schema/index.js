@@ -8,6 +8,7 @@ export default gql`
   }
 
   type User {
+    _id: ID!
     name: String!
     lastName: String!
     birth: Date
@@ -33,6 +34,15 @@ export default gql`
   }
 
   type Mutation {
+    createUser(
+      name: String
+      lastName: String!
+      birth: Date
+      userName: String!
+      password: String!
+      level: Int
+      challengesApproved: [String]
+    ): User
     createChallenge(
       animal: String!
       timeToDraw: Int!
