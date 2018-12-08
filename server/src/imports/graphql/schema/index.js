@@ -1,8 +1,20 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
+  scalar Date
+
   type Status {
     message: String!
+  }
+
+  type User {
+    name: String!
+    lastName: String!
+    birth: Date
+    userName: String!
+    password: String!
+    level: Int
+    challengesApproved: [Challenge]
   }
 
   type Challenge {
@@ -16,6 +28,7 @@ export default gql`
   type Query {
     getChallenge(_id: ID): Challenge
     getChallenges: [Challenge]
+    getUser(_id: ID): User
   }
 
   type Mutation {

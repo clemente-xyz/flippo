@@ -1,3 +1,4 @@
+import User from "./User";
 import Challenge from "./Challenge";
 
-export { Challenge };
+export { User, Challenge };
