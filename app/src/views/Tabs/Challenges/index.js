@@ -4,10 +4,11 @@ import Emoji from "react-native-emoji";
 import Styles from "./styles";
 
 export default class extends Component {
-  handleClick = e => {
-    e.preventDefault();
-    this.props.navigation.navigate("OnChallenge");
+  handleClick = itemKey => {
+    alert(itemKey);
+    this.props.navigation.navigate("OnChallenge", { itemKey: itemKey });
   };
+
   render() {
     return (
       <View style={Styles.container}>
@@ -41,7 +42,7 @@ export default class extends Component {
                   <Emoji name={item.key} style={{ fontSize: 25 }} />
                   <Text style={Styles.items}>{item.name}</Text>
                   <View style={Styles.spacer} />
-                  <TouchableOpacity onPress={this.handleClick}>
+                  <TouchableOpacity onPress={() => this.handleClick(item.key)}>
                     <Text style={Styles.button}>Draw me!</Text>
                   </TouchableOpacity>
                 </View>

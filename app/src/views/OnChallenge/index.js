@@ -6,6 +6,7 @@ import Camera from "../../components/Camera";
 export default class extends Component {
   state = {
     timer: 25,
+    target: null,
     draw: null
   };
 
@@ -34,6 +35,9 @@ export default class extends Component {
   }
 
   componentDidMount() {
+    this.setState({
+      target: this.props.navigation.getParam("itemKey", "NO-ID")
+    });
     this.interval = setInterval(() => {
       this.setState(prevState => ({ timer: prevState.timer - 1 }));
     }, 1000);
