@@ -44,13 +44,18 @@ export default class extends Component {
   }
 
   componentDidUpdate() {
-    const { draw, timer } = this.state;
+    const { draw, timer, target } = this.state;
+
     if (draw === null && timer < 1) {
       clearInterval(this.interval);
       alert("Time out!");
       this.props.navigation.navigate("Challenge");
     } else if (draw !== null) {
-      alert(draw);
+      if (draw === target) {
+        alert("Correct drawing! Draw: " + draw + " Target: " + target);
+      } else {
+        alert("Wrong drawing! Draw: " + draw + " Target: " + target);
+      }
       this.props.navigation.navigate("Challenge");
     }
   }

@@ -5,7 +5,6 @@ import Styles from "./styles";
 
 export default class extends Component {
   handleClick = itemKey => {
-    alert(itemKey);
     this.props.navigation.navigate("OnChallenge", { itemKey: itemKey });
   };
 
