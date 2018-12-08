@@ -25,7 +25,13 @@ export default gql`
       flippoCoins: Int!
       difficulty: Int!
     ): Challenge
-    updateChallenge(_id: ID!, text: String): Challenge
+    updateChallenge(
+      _id: ID!
+      animal: String
+      timeToDraw: Int
+      flippoCoins: Int
+      difficulty: Int
+    ): Challenge
     deleteChallenge(_id: ID!): Status
   }
 `;
