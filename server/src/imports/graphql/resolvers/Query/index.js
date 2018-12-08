@@ -1,8 +1,9 @@
-import { getUser } from "./User";
+import { getUser, getUsers } from "./User";
 import { getChallenge, getChallenges } from "./Challenge";
 
 const UserQueries = {
-  getUser: getUser.getUser
+  getUser: getUser.getUser,
+  getUsers: getUsers.getUsers
 };
 const ChallengeQueries = {
   getChallenge: getChallenge.getChallenge,

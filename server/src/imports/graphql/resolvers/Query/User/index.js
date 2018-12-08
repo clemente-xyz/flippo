@@ -4,4 +4,8 @@ const getUser = {
   getUser: (_, { _id }) => User.findById({ _id })
 };
 
-export { getUser };
+const getUsers = {
+  getUsers: () => User.find({})
+};
+
+export { getUser, getUsers };

@@ -29,6 +29,7 @@ export default gql`
     getChallenge(_id: ID): Challenge
     getChallenges: [Challenge]
     getUser(_id: ID): User
+    getUsers: [User]
   }
 
   type Mutation {
