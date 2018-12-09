@@ -5,7 +5,7 @@ const getChallenge = {
 };
 
 const getChallenges = {
-  getChallenges: () => Challenge.find({})
+  getChallenges: () => Challenge.find({}).sort({ createdAt: -1 })
 };
 
 export { getChallenge, getChallenges };

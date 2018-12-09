@@ -5,7 +5,7 @@ const getUser = {
 };
 
 const getUsers = {
-  getUsers: () => User.find({})
+  getUsers: () => User.find({}).sort({ createdAt: -1 })
 };
 
 export { getUser, getUsers };
