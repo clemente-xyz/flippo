@@ -36,9 +36,13 @@ export default gql`
 
   type Query {
     getChallenge(_id: ID): Challenge
+
     getChallenges: [Challenge]
+
     getUser(_id: ID): User
+
     getUsers: [User]
+
     authUser(userName: String!, password: String!): Auth
   }
 
@@ -53,12 +57,26 @@ export default gql`
       level: Int
       challengesApproved: [String]
     ): Auth
+
+    updateUser(
+      _id: ID!
+      userName: String
+      password: String
+      name: String
+      lastName: String
+      birth: Date
+      avatar: String
+      level: Int
+      challengesApproved: [String]
+    ): User
+
     createChallenge(
       animal: String!
       timeToDraw: Int!
       flippoCoins: Int!
       difficulty: Int!
     ): Challenge
+
     updateChallenge(
       _id: ID!
       animal: String
@@ -66,6 +84,7 @@ export default gql`
       flippoCoins: Int
       difficulty: Int
     ): Challenge
+
     deleteChallenge(_id: ID!): Status
   }
 `;

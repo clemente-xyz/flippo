@@ -13,6 +13,7 @@ export default {
     createChallenge: ChallengeMutations.createChallenge,
     updateChallenge: ChallengeMutations.updateChallenge,
     deleteChallenge: ChallengeMutations.deleteChallenge,
-    createUser: UserMutations.createUser
+    createUser: UserMutations.createUser,
+    updateUser: UserMutations.updateUser
   }
 };
