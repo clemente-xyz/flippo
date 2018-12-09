@@ -70,6 +70,8 @@ export default gql`
       challengesApproved: [String]
     ): User
 
+    deleteUser(_id: ID!): Status
+
     createChallenge(
       animal: String!
       timeToDraw: Int!

@@ -15,4 +15,18 @@ const updateUser = {
     User.findByIdAndUpdate(_id, rest, { new: true })
 };
 
-export { createUser, updateUser };
+const deleteUser = {
+  deleteUser: async (_, { _id }) => {
+    try {
+      await User.findByIdAndDelete(_id);
+
+      return {
+        message: "User deletion successful!"
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+};
+
+export { createUser, updateUser, deleteUser };
