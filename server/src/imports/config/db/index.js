@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import constants from "../Constants";
 
+mongoose.set("useCreateIndex", true);
+
 mongoose.Promise = global.Promise;
 
 mongoose.set("debug", true); // debug mode on

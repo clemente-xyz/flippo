@@ -9,11 +9,11 @@ export default gql`
 
   type User {
     _id: ID!
+    userName: String!
     name: String!
     lastName: String!
     birth: Date
-    userName: String!
-    password: String!
+    avatar: String
     level: Int
     challengesApproved: [Challenge]
     createdAt: Date!
@@ -39,11 +39,12 @@ export default gql`
 
   type Mutation {
     createUser(
-      name: String
-      lastName: String!
-      birth: Date
       userName: String!
       password: String!
+      name: String
+      lastName: String
+      birth: Date
+      avatar: String
       level: Int
       challengesApproved: [String]
     ): User
