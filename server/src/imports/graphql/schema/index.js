@@ -16,6 +16,7 @@ export default gql`
     password: String!
     level: Int
     challengesApproved: [Challenge]
+    createdAt: Date!
   }
 
   type Challenge {
@@ -24,6 +25,7 @@ export default gql`
     timeToDraw: Int
     flippoCoins: Int
     difficulty: Int
+    createdAt: Date!
   }
 
   type Query {
