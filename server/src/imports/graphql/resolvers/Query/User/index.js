@@ -15,7 +15,7 @@ const authUser = {
     if (!user) {
       throw new Error("User not found!");
     } else {
-      if (password != user.password) {
+      if (!user.checkPassword(password)) {
         throw new Error("Passwords don't match!");
       }
       return user;
