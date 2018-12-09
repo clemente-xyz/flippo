@@ -2,11 +2,15 @@ import mongoose, { Schema } from "mongoose";
 
 const UserSchema = new Schema(
   {
+    userName: {
+      type: String,
+      unique: true
+    },
+    password: String,
     name: String,
     lastName: String,
     birth: Date,
-    userName: String,
-    password: String,
+    avatar: String,
     level: Number,
     challengesApproved: Array
   },

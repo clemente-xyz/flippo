@@ -17,6 +17,7 @@ export default gql`
     level: Int
     challengesApproved: [Challenge]
     createdAt: Date!
+    updatedAt: Date!
   }
 
   type Challenge {
@@ -26,6 +27,7 @@ export default gql`
     flippoCoins: Int
     difficulty: Int
     createdAt: Date!
+    updatedAt: Date!
   }
 
   type Query {
