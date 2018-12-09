@@ -14,7 +14,7 @@ export default new ApolloServer({
   playground: {
     endpoint: "/graphql",
     settings: {
-      "editor.theme": "light"
+      "editor.theme": "dark"
     }
   }
 });

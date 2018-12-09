@@ -1,7 +1,13 @@
 import { User } from "../../../../collections";
 
 const createUser = {
-  createUser: (_, args) => User.create(args)
+  createUser: async (_, args) => {
+    const user = await User.create(args);
+
+    return {
+      token: user.createToken()
+    };
+  }
 };
 
 export { createUser };

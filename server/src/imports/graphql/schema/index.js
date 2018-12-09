@@ -3,6 +3,10 @@ import { gql } from "apollo-server-express";
 export default gql`
   scalar Date
 
+  type Auth {
+    token: String!
+  }
+
   type Status {
     message: String!
   }
@@ -35,7 +39,7 @@ export default gql`
     getChallenges: [Challenge]
     getUser(_id: ID): User
     getUsers: [User]
-    authUser(userName: String!, password: String!): User
+    authUser(userName: String!, password: String!): Auth
   }
 
   type Mutation {
@@ -48,7 +52,7 @@ export default gql`
       avatar: String
       level: Int
       challengesApproved: [String]
-    ): User
+    ): Auth
     createChallenge(
       animal: String!
       timeToDraw: Int!
