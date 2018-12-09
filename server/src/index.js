@@ -1,11 +1,11 @@
 import express from "express";
 import constants from "./imports/config/Constants";
 import "./imports/config/db";
-import schema from "./imports/graphql";
+import middlewares from "./imports/config/Middleware";
 
 const app = express();
 
-schema.applyMiddleware({ app });
+middlewares(app);
 
 app.listen(constants.PORT, err => {
   if (err) {

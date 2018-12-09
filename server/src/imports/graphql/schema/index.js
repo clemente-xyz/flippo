@@ -19,7 +19,7 @@ export default gql`
     birth: Date
     avatar: String
     level: Int
-    challengesApproved: [Challenge]
+    games: [Game]
     createdAt: Date!
     updatedAt: Date!
   }
@@ -34,16 +34,29 @@ export default gql`
     updatedAt: Date!
   }
 
+  type Game {
+    _id: ID!
+    challenge: String!
+    user: String!
+    reached: Boolean
+    createdAt: Date!
+    updatedAt: Date!
+  }
+
   type Query {
-    getChallenge(_id: ID): Challenge
-
-    getChallenges: [Challenge]
-
     getUser(_id: ID): User
 
     getUsers: [User]
 
     authUser(userName: String!, password: String!): Auth
+
+    getChallenge(_id: ID): Challenge
+
+    getChallenges: [Challenge]
+
+    getGame(_id: ID!): Game
+
+    getGames: [Game]
   }
 
   type Mutation {
@@ -88,5 +101,11 @@ export default gql`
     ): Challenge
 
     deleteChallenge(_id: ID!): Status
+
+    createGame(challenge: String!, user: String!): Game
+
+    updateGame(_id: ID!, reached: Boolean!): Game
+
+    deleteGame(_id: ID!): Status
   }
 `;

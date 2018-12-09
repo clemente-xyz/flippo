@@ -1,5 +1,6 @@
 import { createUser, updateUser, deleteUser } from "./User";
 import { createChallenge, updateChallenge, deleteChallenge } from "./Challenge";
+import { createGame, updateGame, deleteGame } from "./Game";
 
 const UserMutations = {
   createUser: createUser.createUser,
@@ -13,4 +14,10 @@ const ChallengeMutations = {
   deleteChallenge: deleteChallenge.deleteChallenge
 };
 
-export { UserMutations, ChallengeMutations };
+const GameMutations = {
+  createGame: createGame.createGame,
+  updateGame: updateGame.updateGame,
+  deleteGame: deleteGame.deleteGame
+};
+
+export { UserMutations, ChallengeMutations, GameMutations };

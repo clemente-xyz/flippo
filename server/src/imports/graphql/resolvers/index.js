@@ -1,5 +1,5 @@
-import { UserQueries, ChallengeQueries } from "./Query";
-import { UserMutations, ChallengeMutations } from "./Mutation";
+import { UserQueries, ChallengeQueries, GameQueries } from "./Query";
+import { UserMutations, ChallengeMutations, GameMutations } from "./Mutation";
 
 export default {
   Query: {
@@ -7,7 +7,9 @@ export default {
     getUsers: UserQueries.getUsers,
     authUser: UserQueries.authUser,
     getChallenge: ChallengeQueries.getChallenge,
-    getChallenges: ChallengeQueries.getChallenges
+    getChallenges: ChallengeQueries.getChallenges,
+    getGame: GameQueries.getGame,
+    getGames: GameQueries.getGames
   },
   Mutation: {
     createChallenge: ChallengeMutations.createChallenge,
@@ -15,6 +17,9 @@ export default {
     deleteChallenge: ChallengeMutations.deleteChallenge,
     createUser: UserMutations.createUser,
     updateUser: UserMutations.updateUser,
-    deleteUser: UserMutations.deleteUser
+    deleteUser: UserMutations.deleteUser,
+    createGame: GameMutations.createGame,
+    updateGame: GameMutations.updateGame,
+    deleteGame: GameMutations.deleteGame
   }
 };
