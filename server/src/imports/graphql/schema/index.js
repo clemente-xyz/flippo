@@ -35,6 +35,7 @@ export default gql`
     getChallenges: [Challenge]
     getUser(_id: ID): User
     getUsers: [User]
+    authUser(userName: String!, password: String!): User
   }
 
   type Mutation {
