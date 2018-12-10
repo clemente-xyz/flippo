@@ -1,6 +1,12 @@
 import jwt from "jsonwebtoken";
 import constants from "../../config/Constants";
 
+export async function requireAuth(user) {
+  if (!user || !user._id) {
+    throw new Error("Unauthorized user!");
+  }
+}
+
 export function decodeToken(token) {
   const arr = token.split(" ");
 

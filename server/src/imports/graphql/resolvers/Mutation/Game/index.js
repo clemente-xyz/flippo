@@ -1,17 +1,32 @@
 import { Game } from "../../../../collections";
+import { requireAuth } from "../../../../services/auth";
 
 const createGame = {
-  createGame: (_, args) => Game.create(args)
+  createGame: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+      return Game.create(args);
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const updateGame = {
-  updateGame: (_, { _id, ...rest }) =>
-    Game.findByIdAndUpdate(_id, rest, { new: true })
+  updateGame: async (_, { _id, ...rest }, { user }) => {
+    try {
+      await requireAuth(user);
+      return Game.findByIdAndUpdate(_id, rest, { new: true });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const deleteGame = {
-  deleteGame: async (_, { _id }) => {
+  deleteGame: async (_, { _id }, { user }) => {
     try {
+      await requireAuth(user);
       await Game.findByIdAndDelete(_id);
       return {
         message: "Game deletion succeded!"

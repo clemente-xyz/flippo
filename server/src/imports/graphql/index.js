@@ -12,9 +12,9 @@ ObjectId.prototype.valueOf = function() {
 export default new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
-    user: req.user;
-  },
+  context: ({ req }) => ({
+    user: req.user
+  }),
   playground: {
     endpoint: constants.GRAPHQL_PATH,
     settings: {

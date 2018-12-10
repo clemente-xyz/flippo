@@ -1,11 +1,28 @@
 import { Game } from "../../../../collections";
+import { requireAuth } from "../../../../services/auth";
 
 const getGame = {
-  getGame: (_, { _id }) => Game.findById({ _id })
+  getGame: async (_, { _id }, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return Game.findById({ _id });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const getGames = {
-  getGames: () => Game.find({}).sort({ createdAt: -1 })
+  getGames: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return Game.find({}).sort({ createdAt: -1 });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 export { getGame, getGames };
