@@ -14,6 +14,19 @@ export default gql`
   type User {
     _id: ID!
     userName: String!
+    name: String
+    lastName: String
+    birth: Date
+    avatar: String
+    level: Int
+    games: [Game]
+    createdAt: Date!
+    updatedAt: Date!
+  }
+
+  type Me {
+    _id: ID!
+    userName: String!
     name: String!
     lastName: String!
     birth: Date
@@ -49,6 +62,8 @@ export default gql`
     getUsers: [User]
 
     signin(userName: String!, password: String!): Auth
+
+    me: Me
 
     getChallenge(_id: ID): Challenge
 

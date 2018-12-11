@@ -1,11 +1,29 @@
 import { User } from "../../../../collections";
 
+import { requireAuth } from "../../../../services/auth";
+
 const getUser = {
-  getUser: (_, { _id }) => User.findById({ _id })
+  getUser: async (_, { _id }, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return User.findById({ _id });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const getUsers = {
-  getUsers: () => User.find({}).sort({ createdAt: -1 })
+  getUsers: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return User.find({}).sort({ createdAt: -1 });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const signin = {
@@ -25,4 +43,16 @@ const signin = {
   }
 };
 
-export { getUser, getUsers, signin };
+const me = {
+  me: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return User.findById(user._id);
+    } catch (error) {
+      throw error;
+    }
+  }
+};
+
+export { getUser, getUsers, signin, me };

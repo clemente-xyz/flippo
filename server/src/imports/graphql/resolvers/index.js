@@ -6,6 +6,7 @@ export default {
     getUser: UserQueries.getUser,
     getUsers: UserQueries.getUsers,
     signin: UserQueries.signin,
+    me: UserQueries.me,
     getChallenge: ChallengeQueries.getChallenge,
     getChallenges: ChallengeQueries.getChallenges,
     getGame: GameQueries.getGame,

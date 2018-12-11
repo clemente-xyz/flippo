@@ -1,11 +1,12 @@
-import { getUser, getUsers, signin } from "./User";
+import { getUser, getUsers, signin, me } from "./User";
 import { getChallenge, getChallenges } from "./Challenge";
 import { getGame, getGames } from "./Game";
 
 const UserQueries = {
   getUser: getUser.getUser,
   getUsers: getUsers.getUsers,
-  signin: signin.signin
+  signin: signin.signin,
+  me: me.me
 };
 
 const ChallengeQueries = {
