@@ -1,23 +1,40 @@
 import { Challenge } from "../../../../collections";
+import { requireAuth } from "../../../../services";
 
 const createChallenge = {
-  createChallenge: (_, args) => Challenge.create(args)
+  createChallenge: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return Challenge.create(args);
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const updateChallenge = {
-  updateChallenge: (_, { _id, ...rest }) =>
-    Challenge.findByIdAndUpdate(_id, rest, { new: true })
+  updateChallenge: async (_, { _id, ...rest }, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return Challenge.findByIdAndUpdate(_id, rest, { new: true });
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 const deleteChallenge = {
-  deleteChallenge: async (_, { _id }) => {
+  deleteChallenge: async (_, { _id }, { user }) => {
     try {
+      await requireAuth(user);
       await Challenge.findByIdAndDelete(_id);
       return {
         message: "Challenge deletion succeded!"
       };
-    } catch (err) {
-      throw err;
+    } catch (error) {
+      throw error;
     }
   }
 };
