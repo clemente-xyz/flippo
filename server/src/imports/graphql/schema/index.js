@@ -48,7 +48,7 @@ export default gql`
 
     getUsers: [User]
 
-    authUser(userName: String!, password: String!): Auth
+    signin(userName: String!, password: String!): Auth
 
     getChallenge(_id: ID): Challenge
 

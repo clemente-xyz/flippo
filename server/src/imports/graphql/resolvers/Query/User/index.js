@@ -8,8 +8,8 @@ const getUsers = {
   getUsers: () => User.find({}).sort({ createdAt: -1 })
 };
 
-const authUser = {
-  authUser: async (_, { userName, password }) => {
+const signin = {
+  signin: async (_, { userName, password }) => {
     const user = await User.findOne({ userName });
 
     if (!user) {
@@ -18,9 +18,11 @@ const authUser = {
       if (!user.checkPassword(password)) {
         throw new Error("Passwords don't match!");
       }
-      return user;
+      return {
+        token: user.createToken()
+      };
     }
   }
 };
 
-export { getUser, getUsers, authUser };
+export { getUser, getUsers, signin };

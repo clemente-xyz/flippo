@@ -5,7 +5,7 @@ export default {
   Query: {
     getUser: UserQueries.getUser,
     getUsers: UserQueries.getUsers,
-    authUser: UserQueries.authUser,
+    signin: UserQueries.signin,
     getChallenge: ChallengeQueries.getChallenge,
     getChallenges: ChallengeQueries.getChallenges,
     getGame: GameQueries.getGame,
