@@ -46,9 +46,9 @@ const signin = {
 const me = {
   me: async (_, args, { user }) => {
     try {
-      await requireAuth(user);
+      const me = await requireAuth(user);
 
-      return User.findById(user._id);
+      return me;
     } catch (error) {
       throw error;
     }
