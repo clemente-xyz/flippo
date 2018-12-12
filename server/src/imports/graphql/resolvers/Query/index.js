@@ -1,6 +1,6 @@
 import { getUser, getUsers, signin, me } from "./User";
 import { getChallenge, getChallenges } from "./Challenge";
-import { getGame, getGames } from "./Game";
+import { getGame, getGames, getUserGames } from "./Game";
 
 const UserQueries = {
   getUser: getUser.getUser,
@@ -16,7 +16,8 @@ const ChallengeQueries = {
 
 const GameQueries = {
   getGame: getGame.getGame,
-  getGames: getGames.getGames
+  getGames: getGames.getGames,
+  getUserGames: getUserGames.getUserGames
 };
 
 export { UserQueries, ChallengeQueries, GameQueries };

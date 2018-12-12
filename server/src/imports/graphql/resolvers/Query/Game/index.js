@@ -25,4 +25,16 @@ const getGames = {
   }
 };
 
-export { getGame, getGames };
+const getUserGames = {
+  getUserGames: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+
+      return Game.find({ user: user._id }).sort({ createdAt: -1 });
+    } catch (error) {
+      throw error;
+    }
+  }
+};
+
+export { getGame, getGames, getUserGames };

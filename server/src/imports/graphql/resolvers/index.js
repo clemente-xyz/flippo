@@ -11,7 +11,8 @@ export default {
     getChallenge: ChallengeQueries.getChallenge,
     getChallenges: ChallengeQueries.getChallenges,
     getGame: GameQueries.getGame,
-    getGames: GameQueries.getGames
+    getGames: GameQueries.getGames,
+    getUserGames: GameQueries.getUserGames
   },
   Mutation: {
     createChallenge: ChallengeMutations.createChallenge,

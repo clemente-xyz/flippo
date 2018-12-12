@@ -72,6 +72,8 @@ export default gql`
     getGame(_id: ID!): Game
 
     getGames: [Game]
+
+    getUserGames: [Game]
   }
 
   type Mutation {
