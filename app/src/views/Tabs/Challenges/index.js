@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { graphql } from "react-apollo";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import Emoji from "react-native-emoji";
 import Styles from "./styles";
 
-export default class extends Component {
+import getChallengeQuery from "../../../apollo/Query/Challenge";
+
+class Challenges extends Component {
   handleClick = itemKey => {
     this.props.navigation.navigate("OnChallenge", { itemKey: itemKey });
   };
@@ -54,3 +57,5 @@ export default class extends Component {
     );
   }
 }
+
+export default graphql(getChallengeQuery)(Challenges);
