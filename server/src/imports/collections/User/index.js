@@ -9,7 +9,10 @@ const UserSchema = new Schema(
       type: String,
       unique: true
     },
-    password: String,
+    password: {
+      type: String,
+      minlength: [5, "Password must have more than 5 chars :)"]
+    },
     name: String,
     lastName: String,
     birth: Date,

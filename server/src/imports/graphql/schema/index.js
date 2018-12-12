@@ -50,7 +50,7 @@ export default gql`
   type Game {
     _id: ID!
     challenge: String!
-    user: String!
+    user: User!
     reached: Boolean
     createdAt: Date!
     updatedAt: Date!
@@ -117,7 +117,7 @@ export default gql`
 
     deleteChallenge(_id: ID!): Status
 
-    createGame(challenge: String!, user: String!): Game
+    createGame(challenge: String!): Game
 
     updateGame(_id: ID!, reached: Boolean!): Game
 

@@ -3,7 +3,10 @@ import mongoose, { Schema } from "mongoose";
 const GameSchema = new Schema(
   {
     challenge: String,
-    user: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
     reached: Boolean
   },
   { timestamps: true }

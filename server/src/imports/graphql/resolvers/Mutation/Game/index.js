@@ -5,7 +5,7 @@ const createGame = {
   createGame: async (_, args, { user }) => {
     try {
       await requireAuth(user);
-      return Game.create(args);
+      return Game.create({ ...args, user: user._id });
     } catch (error) {
       throw error;
     }

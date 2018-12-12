@@ -1,5 +1,6 @@
 import { UserQueries, ChallengeQueries, GameQueries } from "./Query";
 import { UserMutations, ChallengeMutations, GameMutations } from "./Mutation";
+import { User } from "../../collections";
 
 export default {
   Query: {
@@ -22,5 +23,8 @@ export default {
     createGame: GameMutations.createGame,
     updateGame: GameMutations.updateGame,
     deleteGame: GameMutations.deleteGame
+  },
+  Game: {
+    user: ({ user }) => User.findById(user)
   }
 };
