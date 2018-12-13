@@ -5,7 +5,7 @@ import { requireAuth } from "../../../../services/auth";
 const getUser = {
   getUser: async (_, { _id }, { user }) => {
     try {
-      await requireAuth(user);
+      //await requireAuth(user);
 
       return User.findById({ _id });
     } catch (error) {
@@ -17,7 +17,7 @@ const getUser = {
 const getUsers = {
   getUsers: async (_, args, { user }) => {
     try {
-      await requireAuth(user);
+      //await requireAuth(user);
 
       return User.find({}).sort({ createdAt: -1 });
     } catch (error) {

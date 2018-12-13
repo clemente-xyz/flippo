@@ -16,7 +16,7 @@ export default gql`
     username: String!
     firstname: String
     lastname: String
-    birth: Date
+    birth: String
     avatar: String
     level: Int
     games: [Game]
@@ -29,7 +29,7 @@ export default gql`
     username: String!
     firstname: String!
     lastname: String!
-    birth: Date
+    birth: String
     avatar: String
     level: Int
     games: [Game]
@@ -82,7 +82,7 @@ export default gql`
       password: String!
       firstname: String
       lastname: String
-      birth: Date
+      birth: String
       avatar: String
       level: Int
       challengesApproved: [String]
@@ -94,7 +94,7 @@ export default gql`
       password: String
       firstname: String
       lastname: String
-      birth: Date
+      birth: String
       avatar: String
       level: Int
       challengesApproved: [String]

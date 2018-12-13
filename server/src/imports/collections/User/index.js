@@ -5,7 +5,7 @@ import constants from "../../config/Constants";
 
 const UserSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
       unique: true
     },
@@ -14,8 +14,8 @@ const UserSchema = new Schema(
       minlength: [5, "Password must have more than 5 chars :)"]
     },
     firstname: String,
-    lastName: String,
-    birth: Date,
+    lastname: String,
+    birth: String,
     avatar: String,
     level: Number,
     challengesApproved: Array
