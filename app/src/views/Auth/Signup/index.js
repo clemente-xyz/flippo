@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, ImageBackground, Text, AsyncStorage } from "react-native";
 import { graphql } from "react-apollo";
 import styles from "./styles";
-import { Button, Input } from "../../../components";
+import { Button, Input, Loading } from "../../../components";
 import wallpaper from "../../../assets/wallpaper.jpg";
 
 import signupMutation from "../../../apollo/Mutation/User/Signup";
@@ -13,10 +13,13 @@ class SignUp extends Component {
     password: "",
     firstname: "",
     lastname: "",
-    birth: ""
+    birth: "",
+    loading: false
   };
 
   handleSignUpTouch = async () => {
+    this.setState({ loading: true });
+
     const { username, password, firstname, lastname, birth } = this.state;
 
     const { data } = await this.props.mutate({
@@ -31,6 +34,10 @@ class SignUp extends Component {
 
     try {
       await AsyncStorage.setItem("@flippo", data.signup.token);
+
+      return this.setState({
+        loading: false
+      });
     } catch (error) {
       throw error;
     }
@@ -51,6 +58,17 @@ class SignUp extends Component {
   };
 
   render() {
+    const { loading } = this.state;
+
+    if (loading == true) {
+      return (
+        <View style={styles.container}>
+          <ImageBackground source={wallpaper} style={styles.wallpaper}>
+            <Loading color="white" size="large" />
+          </ImageBackground>
+        </View>
+      );
+    }
     return (
       <View style={styles.container}>
         <ImageBackground source={wallpaper} style={styles.wallpaper}>
