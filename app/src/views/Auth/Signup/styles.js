@@ -13,11 +13,15 @@ export default StyleSheet.create({
     alignItems: "center"
   },
   titleContainer: {
-    flex: 1,
+    flex: 0.5,
     justifyContent: "center"
   },
+  title: {
+    color: "#fff",
+    fontSize: 30
+  },
   inputContainer: {
-    flex: 0.3,
+    flex: 1,
     justifyContent: "space-between",
     width: "100%",
     padding: 25

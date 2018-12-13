@@ -6,16 +6,19 @@ import {
   createSwitchNavigator
 } from "react-navigation";
 import { FontAwesome } from "@expo/vector-icons";
-import { Signin } from "./Auth";
+import { Signin, Signup } from "./Auth";
 import OnChallenge from "./OnChallenge";
 import { Profile, Challenges } from "./Tabs";
 
 const AuthStack = createStackNavigator({
-  Auth: {
+  Signin: {
     screen: Signin,
     navigationOptions: {
       header: null
     }
+  },
+  Signup: {
+    screen: Signup
   }
 });
 

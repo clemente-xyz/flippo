@@ -11,15 +11,15 @@ class SignIn extends Component {
     password: ""
   };
 
-  handleUsernameChange = text => {
-    this.setState({ username: text });
+  handleTextChange = (text, type) => {
+    this.setState({ [type]: text });
   };
 
-  handlePasswordChange = text => {
-    this.setState({ password: text });
+  handleSignUpTouch = () => {
+    this.props.navigation.navigate("Signup");
   };
 
-  handleButtonTouch = () => {
+  handleSignInTouch = () => {
     const { username, password } = this.state;
 
     if (username != "ClementeSerrano" || password != "Clemente") {
@@ -38,21 +38,20 @@ class SignIn extends Component {
         <ImageBackground source={wallpaper} style={styles.wallpaper}>
           <View style={styles.titleContainer}>
             <Image source={logo} style={styles.logo} resizeMode="contain" />
-            <Text style={styles.title}>Flippo</Text>
           </View>
           <View style={styles.inputContainer}>
             <Input
-              changed={this.handleUsernameChange}
+              changed={text => this.handleTextChange(text, "username")}
               placeholder="Username"
               textColor="white"
-              backgroundColor="rgba(255, 255, 255, 0.3)"
+              backgroundColor="rgba(255, 255, 255, 0.5)"
               isPassword={false}
             />
             <Input
-              changed={this.handlePasswordChange}
+              changed={text => this.handleTextChange(text, "password")}
               placeholder="Password"
               textColor="white"
-              backgroundColor="rgba(255, 255, 255, 0.3)"
+              backgroundColor="rgba(255, 255, 255, 0.5)"
               isPassword={true}
             />
           </View>
@@ -61,7 +60,13 @@ class SignIn extends Component {
               title="Sign in"
               textColor="white"
               backgroundColor="#70db70"
-              touched={this.handleButtonTouch}
+              touched={this.handleSignInTouch}
+            />
+            <Button
+              title="Are you new?"
+              textColor="white"
+              backgroundColor="transparent"
+              touched={this.handleSignUpTouch}
             />
           </View>
         </ImageBackground>

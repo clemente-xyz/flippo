@@ -5,7 +5,8 @@ const Styles = (textColor, backgroundColor) =>
     container: {
       alignItems: "center",
       backgroundColor: backgroundColor,
-      borderRadius: 3
+      borderRadius: 3,
+      margin: 5
     },
     font: {
       color: textColor,
