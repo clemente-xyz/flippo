@@ -13,9 +13,9 @@ export default gql`
 
   type User {
     _id: ID!
-    userName: String!
-    name: String
-    lastName: String
+    username: String!
+    firstname: String
+    lastname: String
     birth: Date
     avatar: String
     level: Int
@@ -26,9 +26,9 @@ export default gql`
 
   type Me {
     _id: ID!
-    userName: String!
-    name: String!
-    lastName: String!
+    username: String!
+    firstname: String!
+    lastname: String!
     birth: Date
     avatar: String
     level: Int
@@ -61,7 +61,7 @@ export default gql`
 
     getUsers: [User]
 
-    signin(userName: String!, password: String!): Auth
+    signin(username: String!, password: String!): Auth
 
     me: Me
 
@@ -77,11 +77,11 @@ export default gql`
   }
 
   type Mutation {
-    createUser(
-      userName: String!
+    signup(
+      username: String!
       password: String!
-      name: String
-      lastName: String
+      firstname: String
+      lastname: String
       birth: Date
       avatar: String
       level: Int
@@ -90,10 +90,10 @@ export default gql`
 
     updateUser(
       _id: ID!
-      userName: String
+      username: String
       password: String
-      name: String
-      lastName: String
+      firstname: String
+      lastname: String
       birth: Date
       avatar: String
       level: Int

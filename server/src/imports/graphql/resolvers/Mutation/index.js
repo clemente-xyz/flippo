@@ -1,9 +1,9 @@
-import { createUser, updateUser, deleteUser } from "./User";
+import { signup, updateUser, deleteUser } from "./User";
 import { createChallenge, updateChallenge, deleteChallenge } from "./Challenge";
 import { createGame, updateGame, deleteGame } from "./Game";
 
 const UserMutations = {
-  createUser: createUser.createUser,
+  signup: signup.signup,
   updateUser: updateUser.updateUser,
   deleteUser: deleteUser.deleteUser
 };

@@ -13,7 +13,7 @@ const UserSchema = new Schema(
       type: String,
       minlength: [5, "Password must have more than 5 chars :)"]
     },
-    name: String,
+    firstname: String,
     lastName: String,
     birth: Date,
     avatar: String,

@@ -18,7 +18,7 @@ export default {
     createChallenge: ChallengeMutations.createChallenge,
     updateChallenge: ChallengeMutations.updateChallenge,
     deleteChallenge: ChallengeMutations.deleteChallenge,
-    createUser: UserMutations.createUser,
+    signup: UserMutations.signup,
     updateUser: UserMutations.updateUser,
     deleteUser: UserMutations.deleteUser,
     createGame: GameMutations.createGame,

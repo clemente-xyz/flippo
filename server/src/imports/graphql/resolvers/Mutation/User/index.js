@@ -1,7 +1,7 @@
 import { User } from "../../../../collections";
 
-const createUser = {
-  createUser: async (_, args) => {
+const signup = {
+  signup: async (_, args) => {
     const user = await User.create(args);
 
     return {
@@ -29,4 +29,4 @@ const deleteUser = {
   }
 };
 
-export { createUser, updateUser, deleteUser };
+export { signup, updateUser, deleteUser };
