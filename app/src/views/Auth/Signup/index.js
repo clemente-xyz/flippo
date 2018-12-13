@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { View, Image, ImageBackground, Text } from "react-native";
+import { View, ImageBackground, Text, AsyncStorage } from "react-native";
+import { graphql } from "react-apollo";
 import styles from "./styles";
 import { Button, Input } from "../../../components";
-import logo from "../../../assets/logo.png";
 import wallpaper from "../../../assets/wallpaper.jpg";
-import Styles from "../../../components/Camera/styles";
+
+import signupMutation from "../../../apollo/Mutation/User/Signup";
 
 class SignUp extends Component {
   state = {
@@ -15,8 +16,24 @@ class SignUp extends Component {
     birth: ""
   };
 
-  handleSignUpTouch = () => {
-    alert("Sign up form");
+  handleSignUpTouch = async () => {
+    const { username, password, firstname, lastname, birth } = this.state;
+
+    const { data } = await this.props.mutate({
+      variables: {
+        username,
+        password,
+        firstname,
+        lastname,
+        birth
+      }
+    });
+
+    try {
+      await AsyncStorage.setItem("@flippo", data.signup.token);
+    } catch (error) {
+      throw error;
+    }
   };
 
   handleTextChange = (text, type) => {
@@ -50,7 +67,7 @@ class SignUp extends Component {
             />
             <Input
               changed={text => this.handleTextChange(text, "lastname")}
-              placeholder="What is your first name?"
+              placeholder="What is your last name?"
               textColor="black"
               backgroundColor="rgba(255, 255, 255, 0.7)"
               isPassword={false}
@@ -82,7 +99,7 @@ class SignUp extends Component {
               title="Sign up"
               textColor="white"
               backgroundColor="#70db70"
-              touched={this.handleSignInTouch}
+              touched={this.handleSignUpTouch}
               disabled={this.checkValidInputs()}
             />
           </View>
@@ -92,4 +109,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default graphql(signupMutation)(SignUp);
