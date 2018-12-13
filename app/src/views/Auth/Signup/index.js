@@ -8,10 +8,10 @@ import Styles from "../../../components/Camera/styles";
 
 class SignUp extends Component {
   state = {
-    userName: "",
+    username: "",
     password: "",
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     birth: ""
   };
 
@@ -23,6 +23,16 @@ class SignUp extends Component {
     this.setState({ [type]: text });
   };
 
+  checkValidInputs = () => {
+    const { username, password, firstname, lastname } = this.state;
+
+    if (!username || !password || !firstname || !lastname) {
+      return true;
+    }
+
+    return false;
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -32,14 +42,14 @@ class SignUp extends Component {
           </View>
           <View style={styles.inputContainer}>
             <Input
-              changed={text => this.handleTextChange(text, "firstName")}
+              changed={text => this.handleTextChange(text, "firstname")}
               placeholder="What is your first name?"
               textColor="black"
               backgroundColor="rgba(255, 255, 255, 0.7)"
               isPassword={false}
             />
             <Input
-              changed={text => this.handleTextChange(text, "lastName")}
+              changed={text => this.handleTextChange(text, "lastname")}
               placeholder="What is your first name?"
               textColor="black"
               backgroundColor="rgba(255, 255, 255, 0.7)"
@@ -53,7 +63,7 @@ class SignUp extends Component {
               isPassword={false}
             />
             <Input
-              changed={text => this.handleTextChange(text, "userName")}
+              changed={text => this.handleTextChange(text, "username")}
               placeholder="What will be your username?"
               textColor="black"
               backgroundColor="rgba(255, 255, 255, 0.7)"
@@ -73,6 +83,7 @@ class SignUp extends Component {
               textColor="white"
               backgroundColor="#70db70"
               touched={this.handleSignInTouch}
+              disabled={this.checkValidInputs()}
             />
           </View>
         </ImageBackground>
