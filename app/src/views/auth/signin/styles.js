@@ -7,6 +7,11 @@ export default StyleSheet.create({
     backgroundColor: "#4286f4",
     justifyContent: "center"
   },
+  wallpaper: {
+    flex: 1,
+    alignSelf: "stretch",
+    alignItems: "center"
+  },
   titleContainer: {
     flex: 1,
     justifyContent: "center"
